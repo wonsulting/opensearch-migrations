@@ -1,5 +1,5 @@
 {
-    "name": "friendsofcat/opensearch-migrations",
+    "name": "wonsulting/opensearch-migrations",
     "description": "OpenSearch migrations for Laravel",
     "keywords": [
         "laravel",
@@ -33,7 +33,7 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-        "friendsofcat/opensearch-adapter": "^2.0",
+        "wonsulting/opensearch-adapter": "^2.0",
         "guzzlehttp/guzzle": "^7.5"
     },
     "require-dev": {
