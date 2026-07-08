@@ -19,23 +19,21 @@ OpenSearch Migrations for Laravel allow you to easily modify and share indices s
 
 The current version of OpenSearch Migrations has been tested with the following configuration:
 
-* PHP 7.4-8.0
+* PHP 8.2+
 * OpenSearch 2.x
-* Laravel 6.x-9.x
+* Laravel 11.x - 13.x
 
 ## Installation
 
 The library can be installed via Composer:
 
 ```bash
-composer require friendsofcat/opensearch-migrations
+composer require wonsulting/opensearch-migrations
 ```
-
-If you want to use OpenSearch Migrations with [Lumen framework](https://lumen.laravel.com/) check [this guide](https://github.com/babenkoivan/opensearch-migrations/wiki/Lumen-Installation).
 
 ## Configuration
 
-OpenSearch Migrations uses [friendsofcat/opensearch-client](https://github.com/friendsofcat/opensearch-client) as a dependency.
+OpenSearch Migrations uses [wonsulting/opensearch-client](https://github.com/wonsulting/opensearch-client) as a dependency.
 To change the client settings you need to publish the configuration file first:
 
 ```bash
@@ -43,7 +41,7 @@ php artisan vendor:publish --provider="OpenSearch\Laravel\Client\ServiceProvider
 ```
 
 In the newly created `config/opensearch.client.php` file you can define the default connection name and describe multiple
-connections using configuration hashes. Please, refer to the [opensearch-client documentation](https://github.com/friendsofcat/opensearch-client) for more details.
+connections using configuration hashes. Please, refer to the [opensearch-client documentation](https://github.com/wonsulting/opensearch-client) for more details.
 
 It is recommended to publish OpenSearch Migrations settings as well:
 
@@ -289,7 +287,7 @@ Index::deleteAlias('my-index', 'my-alias');
 
 #### Multiple Connections
 
-You can configure multiple connections to OpenSearch in the [client's configuration file](https://github.com/friendsofcat/opensearch-client/tree/master#configuration),
+You can configure multiple connections to OpenSearch in the [client's configuration file](https://github.com/wonsulting/opensearch-client/tree/master#configuration),
 and then use a different connection for every operation:
 
 ```php

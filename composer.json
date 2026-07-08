@@ -16,6 +16,10 @@
         },
         {
             "name": "Friends of CAT"
+        },
+        {
+            "name": "Wonsulting",
+            "homepage": "https://wonsulting.com"
         }
     ],
     "autoload": {
