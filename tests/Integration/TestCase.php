@@ -2,13 +2,17 @@
 
 namespace OpenSearch\Migrations\Tests\Integration;
 
-use GuzzleHttp\Ring\Client\CurlHandler;
+use GuzzleHttp\Psr7\HttpFactory;
 use Illuminate\Config\Repository;
 use OpenSearch\Client;
-use OpenSearch\ClientBuilder;
+use OpenSearch\EndpointFactory;
 use OpenSearch\Laravel\Client\ServiceProvider as ClientServiceProvider;
 use OpenSearch\Migrations\ServiceProvider as MigrationsServiceProvider;
+use OpenSearch\RequestFactory;
+use OpenSearch\Serializers\SmartSerializer;
+use OpenSearch\TransportFactory;
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
+use Psr\Http\Client\ClientInterface;
 
 class TestCase extends TestbenchTestCase
 {
@@ -31,11 +35,16 @@ class TestCase extends TestbenchTestCase
         $this->config->set('opensearch.migrations.storage.default_path', realpath(__DIR__ . '/../migrations'));
 
         $app->singleton(Client::class, function () {
-            $httpClientMock = $this->createMock(CurlHandler::class);
+            $httpClient = $this->createStub(ClientInterface::class);
+            $serializer = new SmartSerializer();
+            $httpFactory = new HttpFactory();
 
-            return ClientBuilder::create()
-                ->setHandler($httpClientMock)
-                ->build();
+            $transport = (new TransportFactory())
+                ->setHttpClient($httpClient)
+                ->setRequestFactory(new RequestFactory($httpFactory, $httpFactory, $httpFactory, $serializer))
+                ->create();
+
+            return new Client($transport, new EndpointFactory($serializer), []);
         });
     }
 }
