@@ -6,9 +6,7 @@ use OpenSearch\Migrations\Filesystem\MigrationFile;
 use OpenSearch\Migrations\Filesystem\MigrationStorage;
 use OpenSearch\Migrations\Tests\Integration\TestCase;
 
-/**
- * @covers \OpenSearch\Migrations\Filesystem\MigrationStorage
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(MigrationStorage::class)]
 final class MigrationStorageTest extends TestCase
 {
     private MigrationStorage $migrationStorage;
@@ -48,9 +46,7 @@ final class MigrationStorageTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider newFileNameProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('newFileNameProvider')]
     public function test_file_can_be_created(string $fileName): void
     {
         $file = $this->migrationStorage->create($fileName, 'content');
@@ -78,9 +74,7 @@ final class MigrationStorageTest extends TestCase
         @rmdir($defaultPath);
     }
 
-    /**
-     * @dataProvider existingFileNameProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('existingFileNameProvider')]
     public function test_file_can_be_retrieved_if_exists(string $fileName): void
     {
         /** @var MigrationFile $file */
@@ -89,9 +83,7 @@ final class MigrationStorageTest extends TestCase
         $this->assertSame(basename($fileName, MigrationFile::FILE_EXTENSION), $file->name());
     }
 
-    /**
-     * @dataProvider nonExistingFileNameProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('nonExistingFileNameProvider')]
     public function test_file_can_not_be_retrieved_if_it_does_not_exist(string $fileName): void
     {
         $file = $this->migrationStorage->whereName($fileName);

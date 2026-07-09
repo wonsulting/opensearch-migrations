@@ -8,9 +8,7 @@ use OpenSearch\Migrations\Filesystem\MigrationStorage;
 use OpenSearch\Migrations\MigrationInterface;
 use OpenSearch\Migrations\Tests\Integration\TestCase;
 
-/**
- * @covers \OpenSearch\Migrations\Factories\MigrationFactory
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(MigrationFactory::class)]
 final class MigrationFactoryTest extends TestCase
 {
     private MigrationFactory $migrationFactory;
@@ -32,9 +30,7 @@ final class MigrationFactoryTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider fileNameProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('fileNameProvider')]
     public function test_migration_can_be_created_from_file(string $fileName): void
     {
         /** @var MigrationFile $file */

@@ -47,6 +47,7 @@ return (new Config())
         'no_whitespace_in_blank_line' => true,
         'normalize_index_brace' => true,
         'ordered_imports' => true,
+        'php_unit_attributes' => true,
         'php_unit_construct' => true,
         'php_unit_dedicate_assert' => ['target' => 'newest'],
         'php_unit_dedicate_assert_internal_type' => ['target' => 'newest'],

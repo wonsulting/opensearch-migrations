@@ -11,9 +11,7 @@ use OpenSearch\Migrations\Filesystem\MigrationStorage;
 use OpenSearch\Migrations\Migrator;
 use PHPUnit\Framework\MockObject\MockObject;
 
-/**
- * @covers \OpenSearch\Migrations\Migrator
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(Migrator::class)]
 final class MigratorTest extends TestCase
 {
     use RefreshDatabase;

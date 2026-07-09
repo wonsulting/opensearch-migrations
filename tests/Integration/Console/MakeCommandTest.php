@@ -8,9 +8,7 @@ use OpenSearch\Migrations\Tests\Integration\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 
-/**
- * @covers \OpenSearch\Migrations\Console\MakeCommand
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(MakeCommand::class)]
 final class MakeCommandTest extends TestCase
 {
     public function test_migration_file_can_be_created(): void
