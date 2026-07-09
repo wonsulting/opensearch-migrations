@@ -56,6 +56,17 @@
             ]
         }
     },
+    "config": {
+        "policy": {
+            "advisories": {
+                "ignore-id": {
+                    "PKSA-mdq4-51ck-6kdq": "No patched Laravel 11.x release exists; this package does not use Laravel's email validation rule, so the CRLF injection is not reachable here.",
+                    "PKSA-3r5d-mb8f-1qw9": "Only affects the same unreachable email validation rule; kept unblocked so Laravel 11.x test dependencies can still resolve.",
+                    "PKSA-m5cs-t1y6-qpcs": "Signed URL path confusion is not exercised by this package or its test suite."
+                }
+            }
+        }
+    },
     "scripts": {
         "check-style": "./vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run --diff --show-progress=dots --verbose",
         "fix-style": "./vendor/bin/php-cs-fixer fix --allow-risky=yes",
