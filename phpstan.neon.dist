@@ -3,9 +3,11 @@ includes:
 
 parameters:
   level: max
-  checkMissingIterableValueType: false
-  checkGenericClassInNonGenericObjectType: false
   paths:
     - src
   ignoreErrors:
+    # PHPStan 2.0 removed checkMissingIterableValueType / checkGenericClassInNonGenericObjectType;
+    # ignoring these identifiers preserves the prior config's intent (no forced generic annotations).
+    - identifier: missingType.iterableValue
+    - identifier: missingType.generics
     - '#Parameter .+? of method Illuminate\\Support\\Collection<.+?>::.+?\(\) expects .+? given#'

@@ -11,9 +11,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-/**
- * @covers \OpenSearch\Migrations\Console\FreshCommand
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(FreshCommand::class)]
 final class FreshCommandTest extends TestCase
 {
     private MockObject $migrator;

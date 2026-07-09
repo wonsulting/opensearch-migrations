@@ -6,9 +6,7 @@ use OpenSearch\Migrations\Facades\Index;
 use OpenSearch\Migrations\IndexManagerInterface;
 use OpenSearch\Migrations\Tests\Integration\TestCase;
 
-/**
- * @covers \OpenSearch\Migrations\Facades\Index
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(Index::class)]
 final class IndexTest extends TestCase
 {
     public function test_facade_instantiates_instance_of_correct_type(): void

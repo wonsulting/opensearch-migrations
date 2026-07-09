@@ -1,21 +1,55 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#1 \\$path of method OpenSearch\\\\Migrations\\\\Filesystem\\\\MigrationStorage\\:\\:makeFilePath\\(\\) expects string, mixed given\\.$#"
+			message: '#^Parameter \#2 \$suffix of function basename expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Filesystem/MigrationFile.php
+
+		-
+			message: '#^Parameter \#1 \$path of method OpenSearch\\Migrations\\Filesystem\\MigrationStorage\:\:makeFilePath\(\) expects string, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Filesystem/MigrationStorage.php
 
 		-
-			message: "#^Property OpenSearch\\\\Migrations\\\\Filesystem\\\\MigrationStorage\\:\\:\\$defaultPath \\(string\\) does not accept mixed\\.$#"
+			message: '#^Parameter \#2 \$mode of method Illuminate\\Filesystem\\Filesystem\:\:makeDirectory\(\) expects int, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Filesystem/MigrationStorage.php
 
 		-
-			message: "#^Property OpenSearch\\\\Migrations\\\\Repositories\\\\MigrationRepository\\:\\:\\$connection \\(string\\|null\\) does not accept mixed\\.$#"
+			message: '#^Property OpenSearch\\Migrations\\Filesystem\\MigrationStorage\:\:\$defaultPath \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Filesystem/MigrationStorage.php
+
+		-
+			message: '#^Parameter \#2 \$array of function implode expects array\<string\>, array\<mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Migrator.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
 			count: 1
 			path: src/Repositories/MigrationRepository.php
 
 		-
-			message: "#^Property OpenSearch\\\\Migrations\\\\Repositories\\\\MigrationRepository\\:\\:\\$table \\(string\\) does not accept mixed\\.$#"
+			message: '#^Property OpenSearch\\Migrations\\Repositories\\MigrationRepository\:\:\$connection \(string\|null\) does not accept mixed\.$#'
+			identifier: assign.propertyType
 			count: 1
 			path: src/Repositories/MigrationRepository.php
+
+		-
+			message: '#^Property OpenSearch\\Migrations\\Repositories\\MigrationRepository\:\:\$table \(string\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Repositories/MigrationRepository.php
+
+		-
+			message: '#^Binary operation "\." between mixed and string results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 2
+			path: src/helpers.php

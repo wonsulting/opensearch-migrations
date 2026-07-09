@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use OpenSearch\Migrations\Repositories\MigrationRepository;
 use OpenSearch\Migrations\Tests\Integration\TestCase;
 
-/**
- * @covers \OpenSearch\Migrations\Repositories\MigrationRepository
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(MigrationRepository::class)]
 final class MigrationRepositoryTest extends TestCase
 {
     use RefreshDatabase;

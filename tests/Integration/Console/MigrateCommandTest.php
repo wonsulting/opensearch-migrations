@@ -9,9 +9,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-/**
- * @covers \OpenSearch\Migrations\Console\MigrateCommand
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(MigrateCommand::class)]
 final class MigrateCommandTest extends TestCase
 {
     private MockObject $migrator;

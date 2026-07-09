@@ -9,9 +9,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-/**
- * @covers \OpenSearch\Migrations\Console\StatusCommand
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(StatusCommand::class)]
 final class StatusCommandTest extends TestCase
 {
     private MockObject $migrator;

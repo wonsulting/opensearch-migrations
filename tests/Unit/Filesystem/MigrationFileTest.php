@@ -5,9 +5,7 @@ namespace OpenSearch\Migrations\Tests\Unit\Filesystem;
 use OpenSearch\Migrations\Filesystem\MigrationFile;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \OpenSearch\Migrations\Filesystem\MigrationFile
- */
+#[\PHPUnit\Framework\Attributes\CoversClass(MigrationFile::class)]
 final class MigrationFileTest extends TestCase
 {
     private const FULL_PATH = '/tmp/test.php';
