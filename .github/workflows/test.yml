@@ -13,19 +13,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [8.2, 8.3, 8.4]
         include:
           - php: 8.2
-            testbench: 9.14
-            phpunit: 11.5
+            testbench: 9
+            phpunit: 11
 
           - php: 8.3
-            testbench: 10.6
-            phpunit: 11.5
+            testbench: 10
+            phpunit: 11
 
           - php: 8.4
-            testbench: 11.0
-            phpunit: 12.0
+            testbench: 10
+            phpunit: 11
+
+          - php: 8.4
+            testbench: 11
+            phpunit: 12
+
+          - php: 8.5
+            testbench: 11
+            phpunit: 12
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
